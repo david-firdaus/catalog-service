@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -21,10 +19,12 @@ public class Destination extends BaseEntity {
     private String name;
 
     @NotNull
-    private String city;
+    @Enumerated(value = EnumType.STRING)
+    private City city;
 
     @NotNull
-    private String country;
+    @Enumerated(value = EnumType.STRING)
+    private Country country;
 
     private String note;
 

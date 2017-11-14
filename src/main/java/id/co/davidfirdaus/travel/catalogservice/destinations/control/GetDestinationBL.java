@@ -8,18 +8,14 @@ import org.springframework.stereotype.Component;
 import javax.ws.rs.NotFoundException;
 
 @Component
-public class DestinationService {
+public class GetDestinationBL {
     public static final int DEFAULT_SIZE = 10;
 
     @Autowired
     DestinationRepository destinationRepository;
 
     public Destination getDestination(Long id) throws NotFoundException {
-        Destination destination = destinationRepository.findOne(id);
-        if (destination == null) {
-            throw new NotFoundException("kagkalsglasgj");
-        }
-        return destination;
+        return destinationRepository.findOne(id);
     }
 
     public Destination addDestination(Destination destination){
