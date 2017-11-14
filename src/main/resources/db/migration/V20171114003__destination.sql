@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS destination
   version BIGINT  NOT NULL,
   name VARCHAR(100) NOT NULL,
   city VARCHAR(100),
-  province VARCHAR(100),
   country VARCHAR(100),
   note VARCHAR(200)
 );
