@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class JaxRsConfig extends ResourceConfig {
     public JaxRsConfig() {
         register(DestinationResource.class);
+        register(GenericExceptionHandler.class);
 
     }
 }

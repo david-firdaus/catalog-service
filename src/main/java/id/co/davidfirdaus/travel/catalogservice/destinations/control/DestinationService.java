@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
+import javax.ws.rs.NotFoundException;
+
 @Component
 public class DestinationService {
     public static final int DEFAULT_SIZE = 10;
@@ -12,8 +14,12 @@ public class DestinationService {
     @Autowired
     DestinationRepository destinationRepository;
 
-    public Destination getDestination(Long id) {
-        return destinationRepository.findOne(id);
+    public Destination getDestination(Long id) throws NotFoundException {
+        Destination destination = destinationRepository.findOne(id);
+        if (destination == null) {
+            throw new NotFoundException("kagkalsglasgj");
+        }
+        return destination;
     }
 
     public Destination addDestination(Destination destination){

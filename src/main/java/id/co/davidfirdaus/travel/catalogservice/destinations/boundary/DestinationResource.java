@@ -3,8 +3,6 @@ package id.co.davidfirdaus.travel.catalogservice.destinations.boundary;
 import id.co.davidfirdaus.travel.catalogservice.destinations.control.DestinationService;
 import id.co.davidfirdaus.travel.catalogservice.destinations.entity.Destination;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
