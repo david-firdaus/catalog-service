@@ -14,5 +14,6 @@ public abstract class BaseEntity {
     @JsonIgnore
     private Long version;
 
+    @JsonIgnore
     private String entityKey =  UUID.randomUUID().toString();
 }

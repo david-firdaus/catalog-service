@@ -6,9 +6,9 @@ CREATE TABLE IF NOT EXISTS public.travel_package
   version bigint,
   estimate_price numeric(19,2),
   name character varying(255) NOT NULL,
-  status integer NOT NULL,
+  status VARCHAR(100) NOT NULL,
   term_and_condition character varying(255),
-  type integer NOT NULL,
+  type VARCHAR(100) NOT NULL,
   CONSTRAINT travel_package_pkey PRIMARY KEY (id)
 )
 WITH (

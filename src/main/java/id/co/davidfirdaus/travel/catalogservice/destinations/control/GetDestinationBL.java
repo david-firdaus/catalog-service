@@ -18,10 +18,6 @@ public class GetDestinationBL {
         return destinationRepository.findOne(id);
     }
 
-    public Destination addDestination(Destination destination){
-        return destinationRepository.save(destination);
-    }
-
     public Iterable<Destination> getAllDestination(Integer page, Integer size){
         PageRequest pageable = new PageRequest(page, size < 1 ? DEFAULT_SIZE : size);
         return destinationRepository.findAll(pageable).getContent();

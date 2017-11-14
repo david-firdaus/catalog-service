@@ -1,5 +1,6 @@
 package id.co.davidfirdaus.travel.catalogservice.travelpakacage.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import id.co.davidfirdaus.travel.catalogservice.commons.entity.BaseEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,9 +23,11 @@ import java.util.Set;
 @NoArgsConstructor
 public class TravelPackage extends BaseEntity {
     @NotNull
+    @Enumerated(value = EnumType.STRING)
     private PackageStatus status = PackageStatus.OPEN;
 
     @NotNull
+    @Enumerated(value = EnumType.STRING)
     private PackageType type = PackageType.TRAVEL;
 
     @NotNull @NotEmpty
@@ -34,11 +37,13 @@ public class TravelPackage extends BaseEntity {
 
     private String termAndCondition;
 
+    @JsonIgnore
     @Valid
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(targetEntity = PriceDetail.class, cascade = CascadeType.ALL, mappedBy = "travelPackage")
     private List<PriceDetail> priceDetails = new ArrayList<>();
 
+    @JsonIgnore
     @Valid
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(targetEntity = ItineraryDetail.class, cascade = CascadeType.ALL, mappedBy = "travelPackage")
