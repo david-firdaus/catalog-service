@@ -5,13 +5,14 @@ import id.co.davidfirdaus.travel.catalogservice.destinations.control.DeleteDesti
 import id.co.davidfirdaus.travel.catalogservice.destinations.control.GetDestinationBL;
 import id.co.davidfirdaus.travel.catalogservice.destinations.control.UpdateDestinationBL;
 import id.co.davidfirdaus.travel.catalogservice.destinations.entity.Destination;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-
+@Log4j2
 @Path("destinations")
 public class DestinationResource {
 
