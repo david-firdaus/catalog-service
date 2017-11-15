@@ -40,13 +40,13 @@ public class TravelPackage extends BaseEntity {
     @JsonIgnore
     @Valid
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(targetEntity = PriceDetail.class, cascade = CascadeType.ALL, mappedBy = "travelPackage")
+    @OneToMany(targetEntity = PriceDetail.class, cascade = CascadeType.REMOVE, mappedBy = "travelPackage")
     private List<PriceDetail> priceDetails = new ArrayList<>();
 
     @JsonIgnore
     @Valid
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(targetEntity = ItineraryDetail.class, cascade = CascadeType.ALL, mappedBy = "travelPackage")
+    @OneToMany(targetEntity = ItineraryDetail.class, cascade = CascadeType.REMOVE, mappedBy = "travelPackage")
     private Set<ItineraryDetail> itineraryDetails = new HashSet<>();
 
     @Id
