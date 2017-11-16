@@ -14,6 +14,7 @@ public class JaxRsConfig extends ResourceConfig {
         register(TravelPackageResource.class);
         register(PackageItineraryResource.class);
         register(PackagePriceResource.class);
+        register(BusinessExceptionHandler.class);
         register(GenericExceptionHandler.class);
 
     }
